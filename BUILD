@@ -6,3 +6,10 @@ jsonnet_library(
         "sit-env.jsonnet",
     ],
 )
+
+jsonnet_to_json(
+    name = "app1",
+    src = "app1.jsonnet",
+    outs = ["app1.json"],
+    deps = [":sit-env"],
+)

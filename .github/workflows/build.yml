@@ -1,0 +1,16 @@
+name: Go
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+    runs-on: registry.cn-hangzhou.aliyuncs.com/midea-aiplatform/bazel-build:4.2.2-220120-08ace1c5-26
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: bazel build ...
